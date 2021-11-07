@@ -1,5 +1,5 @@
 <template>
-	<Renderer ref="renderer" antialias :orbit-ctrl="{ enableDamping: true }" resize="window">
+	<Renderer ref="renderer" antialias :orbit-ctrl="{ enableDamping: true }" :resize="true">
 		<Camera :position="cameraPos" />
 		<Scene>
 			<PointLight :position="{ y: 100, z: 200 }" />

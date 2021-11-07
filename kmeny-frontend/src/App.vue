@@ -1,9 +1,9 @@
 <template>
-	<div>
-		<h1>
+	<div class="flex flex-col min-h-0">
+		<h1 class="bg-black flex-0 text-white">
 			THE CUBE
 		</h1>
-		<three-cube />
+		<three-cube class="flex flex-1" />
 	</div>
 </template>
 
