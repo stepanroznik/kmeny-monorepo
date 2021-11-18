@@ -34,7 +34,7 @@ export default defineComponent({
 		const box = this.$refs.box as MeshPublicInterface;
 		if (renderer && box) {
 			renderer.onBeforeRender(() => {
-				box.mesh.rotation.x += 0.01
+				box.mesh!.rotation.x += 0.01
 			})
 		}
 	},

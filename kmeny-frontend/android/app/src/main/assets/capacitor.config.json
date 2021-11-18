@@ -1,0 +1,6 @@
+{
+	"appId": "cz.fairwebgames.kmeny",
+	"appName": "kmeny",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}
