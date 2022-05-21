@@ -10,8 +10,8 @@
 	</Renderer>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue"
+<script setup lang="ts">
+import { onMounted, reactive, ref } from "vue"
 import {
 	Box,
 	Camera,
@@ -23,20 +23,16 @@ import {
 	Scene,
 } from "troisjs"
 
-export default defineComponent({
-    name: 'ThreeCube',
-	components: { Box, Camera, LambertMaterial, PointLight, Renderer, Scene },
-    data: () => ({
-        cameraPos: { z: 5 }
-    }),
-	mounted() {
-		const renderer = this.$refs.renderer as RendererPublicInterface;
-		const box = this.$refs.box as MeshPublicInterface;
-		if (renderer && box) {
-			renderer.onBeforeRender(() => {
-				box.mesh!.rotation.x += 0.01
-			})
-		}
-	},
+const cameraPos = reactive({ z: 5 })
+
+const renderer = ref(null as null | RendererPublicInterface);
+const box = ref(null as null | MeshPublicInterface);
+
+onMounted(() => {
+	if (renderer.value && box.value) {
+		renderer.value.onBeforeRender(() => {
+			box.value!.mesh!.rotation.x += 0.01;
+		})
+	}
 })
 </script>
